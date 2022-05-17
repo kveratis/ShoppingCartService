@@ -62,9 +62,9 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         {
             return new Address
             {
-                Street = "123 Jolly Ln.",
-                City = "Somewhere",
-                Country = "United States"
+                Street = "123 Jolly Lane",
+                City = "Dallas",
+                Country = "USA",
             };
         }
     }
