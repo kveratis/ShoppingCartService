@@ -3,10 +3,10 @@ using ShoppingCartService.Models;
 
 namespace ShoppingCartService.Test.BusinessLogic.Validation
 {
-    public sealed  class AddressValidatorShould
+    public sealed  class AddressValidatorTest
     {
         [Fact]
-        public void Require_Address()
+        public void Should_Require_Address()
         {
             var sut = new AddressValidator();
 
@@ -14,7 +14,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         }
 
         [Fact]
-        public void Require_Address_Have_Country()
+        public void Should_Require_Address_Have_Country()
         {
             var sut = new AddressValidator();
             var address = CreateAddress();
@@ -26,7 +26,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         }
 
         [Fact]
-        public void Require_Address_Have_City()
+        public void Should_Require_Address_Have_City()
         {
             var sut = new AddressValidator();
             var address = CreateAddress();
@@ -38,7 +38,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         }
 
         [Fact]
-        public void Require_Address_Have_Street()
+        public void Should_Require_Address_Have_Street()
         {
             var sut = new AddressValidator();
             var address = CreateAddress();
@@ -50,7 +50,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         }
 
         [Fact]
-        public void Approve_Valid_Address()
+        public void Should_Approve_Valid_Address()
         {
             var sut = new AddressValidator();
             var address = CreateAddress();
