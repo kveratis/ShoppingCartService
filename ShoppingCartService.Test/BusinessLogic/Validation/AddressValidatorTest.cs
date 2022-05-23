@@ -1,5 +1,4 @@
 ﻿using ShoppingCartService.BusinessLogic.Validation;
-using ShoppingCartService.Models;
 
 namespace ShoppingCartService.Test.BusinessLogic.Validation
 {
@@ -17,7 +16,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         public void Should_Require_Address_Have_Country()
         {
             var sut = new AddressValidator();
-            var address = CreateAddress();
+            var address = TestHelper.CreateAddress();
             var nullAddress = address with { Country = null };
             var emptyAddress = address with { Country = String.Empty };
             
@@ -29,7 +28,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         public void Should_Require_Address_Have_City()
         {
             var sut = new AddressValidator();
-            var address = CreateAddress();
+            var address = TestHelper.CreateAddress();
             var nullAddress = address with { City = null };
             var emptyAddress = address with { City = String.Empty };
 
@@ -41,7 +40,7 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         public void Should_Require_Address_Have_Street()
         {
             var sut = new AddressValidator();
-            var address = CreateAddress();
+            var address = TestHelper.CreateAddress();
             var nullAddress = address with { Street = null };
             var emptyAddress = address with { Street = String.Empty };
 
@@ -53,19 +52,9 @@ namespace ShoppingCartService.Test.BusinessLogic.Validation
         public void Should_Approve_Valid_Address()
         {
             var sut = new AddressValidator();
-            var address = CreateAddress();
+            var address = TestHelper.CreateAddress();
 
             Assert.True(sut.IsValid(address));
-        }
-
-        private static Address CreateAddress()
-        {
-            return new Address
-            {
-                Street = "123 Jolly Lane",
-                City = "Dallas",
-                Country = "USA",
-            };
         }
     }
 }
