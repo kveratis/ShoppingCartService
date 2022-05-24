@@ -4,20 +4,12 @@ namespace ShoppingCartService.Test.BusinessLogic
 {
     public sealed class CheckOutEngineTest
     {
-        //[Fact]
-        //public void Should_Have_Valid_Mapping_Between_Cart_And_ShoppingCartDto()
-        //{
-        //    var sut = TestHelper.GetMapperConfiguration();
-
-        //    sut.AssertConfigurationIsValid();
-        //}
-
         [Fact]
         public void Should_Calculate_Total_Of_Zero_With_Empty_Cart()
         {
             var shippingCalculator = new ShippingCalculator();
             var mapper = TestHelper.GetMapper();
-            var emptyCart = TestHelper.CreateCart();
+            var emptyCart = TestHelper.CreateEmptyCart();
             var sut = new CheckOutEngine(shippingCalculator, mapper);
 
             var dto = sut.CalculateTotals(emptyCart);

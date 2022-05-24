@@ -20,14 +20,14 @@ namespace ShoppingCartService.Test
             return new Mapper(GetMapperConfiguration());
         }
 
-        public static Cart CreateCart(CustomerType customerType = CustomerType.Standard, ShippingMethod shippingMethod = ShippingMethod.Standard)
+        public static Cart CreateEmptyCart(CustomerType customerType = CustomerType.Standard, ShippingMethod shippingMethod = ShippingMethod.Standard)
         {
             return new Cart
             {
-                Items = new List<Item>(),
                 CustomerType = customerType,
                 ShippingMethod = shippingMethod,
-                ShippingAddress = CreateAddress()
+                ShippingAddress = CreateAddress(),
+                Items = new List<Item>(),
             };
         }
 
@@ -43,7 +43,7 @@ namespace ShoppingCartService.Test
 
         public static Cart CreateCartWithItems(CustomerType customerType = CustomerType.Standard, ShippingMethod shippingMethod = ShippingMethod.Standard)
         {
-            var cart = CreateCart(customerType, shippingMethod);
+            var cart = CreateEmptyCart(customerType, shippingMethod);
 
             cart.Items.Add(new Item
             {
